@@ -26,6 +26,9 @@
   &:hover::before {
     width: 100%;
   }
+  &:active {
+    outline: none;
+  }
 }
 
 .btn-outline {

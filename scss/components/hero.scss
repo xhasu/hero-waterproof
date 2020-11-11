@@ -21,7 +21,6 @@
 
   &-box {
     @include center($laptop);
-    animation: fadeup 600ms cubic-bezier(0.86, 0, 0.07, 1) forwards;
   }
   &-title {
     margin-bottom: 16px;
@@ -30,6 +29,7 @@
     font-size: 120px;
     line-height: 1;
     text-align: center;
+    animation: fadeup 600ms cubic-bezier(0.86, 0, 0.07, 1) forwards;
     text-transform: uppercase;
     @include below($laptop){
       font-size: 80px;
@@ -47,6 +47,7 @@
     color: white;
     text-align: center;
     box-sizing: border-box;
+    animation: fadein 600ms cubic-bezier(0.86, 0, 0.07, 1) 200ms both;
     @include below($tablet){
       padding: 0 40px;
       max-width: 420px;
@@ -64,13 +65,23 @@
     }
   }
   &-actions {
+    position: relative;
+    animation: fadein 600ms cubic-bezier(0.86, 0, 0.07, 1) 200ms both;
     text-align: center;
   }
 }
 
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @keyframes fadeup {
   from {
-    opacity: .2;
+    opacity: .1;
     transform: translateY(50%);
   }
   to {
