@@ -1,0 +1,74 @@
+
+.sidebar {
+  @include fixed(0, null, 0, 0);
+  width: 60px;
+  z-index: 10;
+  background-color: white;
+
+  @include below($phone){
+    right: 0;
+    bottom: auto;
+    width: 100%;
+    height: 40px;
+  }
+
+  &-box {
+    @include absolute(0,0,0,0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+
+    font-size: 24px;
+    box-sizing: border-box;
+
+    @include below($phone){
+      padding: 0 20px;
+      flex-direction: row;
+      font-size: 18px;
+    }
+  }
+
+  &-nav {
+    text-align: center;
+    color: $color-primary;
+    margin-bottom: 32px;
+    @include below($phone){
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+  &-search {
+    text-align: center;
+    color: $color-primary;
+    margin-bottom: 32px;
+    @include below($phone){
+      margin-bottom: 0;
+      margin-right: 20px;
+    }
+  }
+  &-share {
+    margin-top: auto;
+    margin-bottom: 0;
+    @include below($phone){
+      display: flex;
+      margin-left: auto;
+      margin-right: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+  }
+
+  .share-item {
+    display: block;
+    margin-bottom: 32px;
+    text-align: center;
+
+    color: $color-secondary;
+
+    @include below($phone){
+      margin-bottom: 0;
+      margin-left: 20px;
+    }
+  }
+}
